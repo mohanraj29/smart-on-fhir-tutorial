@@ -46,10 +46,10 @@
           var ldl = byCodes('2089-1');
           var bmi =null;
           if (getQuantityUnit(height[0]) == 'in' && weight != '' && height != '') {
-            bmi = height[0].valueQuantity.value/ Math.pow(((height[0].valueQuantity.value*2.54)/100), 2);
+            bmi = weight[0].valueQuantity.value/ Math.pow(((height[0].valueQuantity.value*2.54)/100), 2);
           }
           else if (weight != '' && height != '') {
-            bmi = height[0].valueQuantity.value/ Math.pow(((height[0].valueQuantity.value)/100), 2);
+            bmi = weight[0].valueQuantity.value/ Math.pow(((height[0].valueQuantity.value)/100), 2);
           }
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
