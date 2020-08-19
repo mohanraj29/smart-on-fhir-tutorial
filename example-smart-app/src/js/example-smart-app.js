@@ -45,12 +45,12 @@
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
           var bmi =null;
-          if (getQuantityUnit(height[0]) == 'in' && weight != '' && height != '') {
-            bmi = weight[0].valueQuantity.value/ Math.pow(((height[0].valueQuantity.value*2.54)/100), 2);
-          }
-          else if (weight != '' && height != '') {
-            bmi = weight[0].valueQuantity.value/ Math.pow(((height[0].valueQuantity.value)/100), 2);
-          }
+          var weightInKG=getWeight(weight[0]);
+          var heightInCM=getHeight(height[0]);
+
+          
+            bmi = weightInKG/ Math.pow(((heightInCM)/100), 2);
+          
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
           p.gender = gender;
@@ -125,12 +125,29 @@
       return undefined;
     }
   }
-  function getQuantityUnit(ob) {
+  function getWeight(ob) {
     if (typeof ob != 'undefined' &&
         typeof ob.valueQuantity != 'undefined' &&
         typeof ob.valueQuantity.value != 'undefined' &&
         typeof ob.valueQuantity.unit != 'undefined') {
-          return ob.valueQuantity.unit;
+          if(ob.valueQuantity.unit == 'lb') {
+            return ob.valueQuantity.value/2.20462;
+          }
+          return ob.valueQuantity.value;
+    } else {
+      return undefined;
+    }
+  }
+
+  function getHeight(ob) {
+    if (typeof ob != 'undefined' &&
+        typeof ob.valueQuantity != 'undefined' &&
+        typeof ob.valueQuantity.value != 'undefined' &&
+        typeof ob.valueQuantity.unit != 'undefined') {
+          if(ob.valueQuantity.unit == 'in') {
+            return ob.valueQuantity.value*2.54;
+          }
+          return ob.valueQuantity.value;
     } else {
       return undefined;
     }
