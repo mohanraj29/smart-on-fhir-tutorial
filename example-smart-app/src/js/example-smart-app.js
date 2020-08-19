@@ -61,7 +61,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-          p.bmi = weight[0].valueQuantity.value / Math.pow((height[0].valueQuantity.value/100), 2);
+         // p.bmi = weight[0].valueQuantity.value / Math.pow((height[0].valueQuantity.value/100), 2);
           ret.resolve(p);
         });
       } else {
@@ -81,11 +81,12 @@
       gender: {value: ''},
       birthdate: {value: ''},
       height: {value: ''},
+      weigth: {value: ''},
       systolicbp: {value: ''},
       diastolicbp: {value: ''},
       ldl: {value: ''},
-      hdl: {value: ''},
-      bmi: {value: ''}
+      hdl: {value: ''}
+      //bmi: {value: ''}
     };
   }
 
@@ -125,11 +126,12 @@
     $('#gender').html(p.gender);
     $('#birthdate').html(p.birthdate);
     $('#height').html(p.height);
+    $('#weight').html(p.weight);
     $('#systolicbp').html(p.systolicbp);
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#bmi').html(p.bmi)
+   // $('#bmi').html(p.bmi)
   };
 
 })(window);
