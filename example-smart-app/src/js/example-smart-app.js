@@ -37,6 +37,7 @@
           }
 
           var height = byCodes('8302-2');
+          var weight = byCodes('29463-7')
           var systolicbp = getBloodPressureValue(byCodes('55284-4'),'8480-6');
           var diastolicbp = getBloodPressureValue(byCodes('55284-4'),'8462-4');
           var hdl = byCodes('2085-9');
@@ -48,6 +49,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          p.weight = getQuantityValueAndUnit(weight[0]);
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -59,7 +61,7 @@
 
           p.hdl = getQuantityValueAndUnit(hdl[0]);
           p.ldl = getQuantityValueAndUnit(ldl[0]);
-
+          p.bmi = weight[0].valueQuantity.value / Math.pow((height[0].valueQuantity.value/100), 2);
           ret.resolve(p);
         });
       } else {
@@ -83,6 +85,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      bmi: {value: ''}
     };
   }
 
@@ -126,6 +129,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#bmi').html(p.bmi)
   };
 
 })(window);
