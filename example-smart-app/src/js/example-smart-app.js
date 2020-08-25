@@ -177,11 +177,11 @@ var weightInkg = null;
 function getBMI() {
   var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
   if (bmi > 25) {
-    $('#bmi').html(bmi + "(Overweight)");
+    $('#bmi').html(bmi + " (Overweight)");
   } else if (bmi > 18) {
-    $('#bmi').html(bmi + "(Normal)");
+    $('#bmi').html(bmi + " (Normal)");
   } else  {
-    $('#bmi').html(bmi + "(Underweight)");
+    $('#bmi').html(bmi + " (Underweight)");
   }
  
   $("#myDiv").css("display", "block");
