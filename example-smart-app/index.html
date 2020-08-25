@@ -43,10 +43,7 @@
       </table>
       <h2 style="text-align: center;">Observation Resource</h2>
       <table style="margin-left: 40%;">
-        <tr>
-          <th>Height:</th>
-          <td id='height'></td>
-        </tr>
+        
         <tr>
           <th>Systolic Blood Pressure:</th>
           <td id='systolicbp'></td>
@@ -57,23 +54,21 @@
           <td id='diastolicbp'></td>
         </tr>
         <tr>
-          <th>LDL:</th>
-          <td id='ldl'></td>
-        </tr>
-        <tr>
-          <th>HDL:</th>
-          <td id='hdl'></td>
+          <th>Height:</th>
+          <td id='height'></td>
         </tr>
         <tr>
           <th>weight:</th>
           <td id='weight'></td>
         </tr>
-        <tr>
-          <th>BMI:</th>
-          <td id='bmi'></td>
-        </tr>
       </table>
       <button type="button" style="color: blue; margin-left: 40%;" id="button" onclick="getBMI()" >Calculate BMI</button>
+     <table style="margin-left: 40%;">
+      <tr style="display: none;" id='myDiv'>
+        <th>BMI:</th>
+        <td id='bmi'></td>
+      </tr>
+     </table >
       <img src="src/images/experion-logo.png" style="width: 150px;float: right;position: absolute;right: 10px;bottom: 10px;" alt="experion-logo" title="Experion Technologies">
     </div>
     <!-- Required JS files to enable this page to embed within an MPage -->

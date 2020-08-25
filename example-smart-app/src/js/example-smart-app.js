@@ -50,7 +50,7 @@ var weightInkg = null;
           var weightInKG=getWeight(weight[0]);
           var heightInCM=getHeight(height[0]);
           weightInkg= weightInKG;
-          heightincm = heightincm;
+          heightincm = heightInCMm;
 
           
            // bmi = weightInKG/ Math.pow(((heightInCM)/100), 2);
@@ -169,10 +169,7 @@ var weightInkg = null;
     $('#height').html(p.height);
     $('#weight').html(p.weight);
     $('#systolicbp').html(p.systolicbp);
-    $('#diastolicbp').html(p.diastolicbp);
-    $('#ldl').html(p.ldl);
-    $('#hdl').html(p.hdl);
-    
+    $('#diastolicbp').html(p.diastolicbp);   
   };
 
 })(window);
@@ -182,5 +179,5 @@ function getBMI() {
   var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
   alert(bmi);
   $('#bmi').html(bmi);
-  
+  $("#myDiv").css("display", "block");
 }
