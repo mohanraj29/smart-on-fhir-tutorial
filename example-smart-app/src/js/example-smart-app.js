@@ -50,7 +50,7 @@ var weightInkg = null;
           var weightInKG=getWeight(weight[0]);
           var heightInCM=getHeight(height[0]);
           weightInkg= weightInKG;
-          heightincm = heightInCMm;
+          heightincm = heightInCM;
 
           
            // bmi = weightInKG/ Math.pow(((heightInCM)/100), 2);
