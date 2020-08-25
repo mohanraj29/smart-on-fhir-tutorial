@@ -152,11 +152,8 @@
       return undefined;
     }
   }
-  function getBMI() {
-    window.drawVisualization =function(p) {
-      $('#bmi').html(p.bmi);
-    }
-  }
+
+  
 
   window.drawVisualization = function(p) {
     $('#holder').show();
@@ -175,3 +172,10 @@
   };
 
 })(window);
+
+$( "#bmi" ).click(function() {
+  window.drawVisualization =function(p) {
+    $('#bmi').html(p.bmi);
+  }
+});
+
