@@ -1,3 +1,5 @@
+var heightincm =null;
+var weightInkg = null;
 (function(window){
   window.extractData = function() {
     var ret = $.Deferred();
@@ -47,6 +49,8 @@
           var bmi =null;
           var weightInKG=getWeight(weight[0]);
           var heightInCM=getHeight(height[0]);
+          weightInkg= weightInKG;
+          heightincm = heightincm;
 
           
             bmi = weightInKG/ Math.pow(((heightInCM)/100), 2);
@@ -173,9 +177,10 @@
 
 })(window);
 
-$( "#bmi" ).click(function() {
-  window.drawVisualization =function(p) {
-    $('#bmi').html(p.bmi);
-  }
+$("#button").click(function(){
+  alert(weightInkg, heightincm);
+  var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
+  alert(bmi);
+  $('#bmi').html(bmi);
+  
 });
-
