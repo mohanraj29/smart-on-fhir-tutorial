@@ -152,6 +152,11 @@
       return undefined;
     }
   }
+  function getBMI() {
+    window.drawVisualization =function(p) {
+      $('#bmi').html(p.bmi);
+    }
+  }
 
   window.drawVisualization = function(p) {
     $('#holder').show();
@@ -166,7 +171,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
-    $('#bmi').html(p.bmi)
+    
   };
 
 })(window);
