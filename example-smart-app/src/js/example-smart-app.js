@@ -53,7 +53,7 @@ var weightInkg = null;
           heightincm = heightincm;
 
           
-            bmi = weightInKG/ Math.pow(((heightInCM)/100), 2);
+           // bmi = weightInKG/ Math.pow(((heightInCM)/100), 2);
           
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
