@@ -185,7 +185,7 @@ function getBMI() {
 
   } else  {
     $('#bmi').html(bmi + " (Underweight)");
-    $("#bmi").css("color", "greenyellow");
+    $("#bmi").css("color", "yellow");
 
   }
  
