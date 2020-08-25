@@ -175,9 +175,14 @@ var weightInkg = null;
 })(window);
 
 function getBMI() {
-  alert(weightInkg, heightincm);
   var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
-  alert(bmi);
-  $('#bmi').html(bmi);
+  if (bmi > 25) {
+    $('#bmi').html(bmi + "(Overweight)");
+  } else if (bmi > 18) {
+    $('#bmi').html(bmi + "(Normal)");
+  } else  {
+    $('#bmi').html(bmi + "(Underweight)");
+  }
+ 
   $("#myDiv").css("display", "block");
 }
