@@ -177,10 +177,10 @@ var weightInkg = null;
 
 })(window);
 
-$("#button").click(function(){
+function getBMI() {
   alert(weightInkg, heightincm);
   var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
   alert(bmi);
   $('#bmi').html(bmi);
   
-});
+}
