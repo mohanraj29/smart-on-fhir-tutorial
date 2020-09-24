@@ -24,10 +24,7 @@ var weightInkg = null;
                                'http://loinc.org|29463-7']
                       }
                     }
-                  },{
-                    pageLimit: 0,   // get all pages
-                    flat     : true // return flat array of Observation resources
-                });
+                  });
 
         $.when(pt, obv).catch(onError);
 
