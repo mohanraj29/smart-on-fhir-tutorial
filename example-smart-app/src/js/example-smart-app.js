@@ -12,19 +12,40 @@ var weightInkg = null;
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        var pt = patient.read();
-        var obv = smart.patient.api.request({
-                    type: 'Observation',
-                    query: {
-                      code: {
-                        $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
-                              'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
-                              'http://loinc.org|2089-1', 'http://loinc.org|55284-4',
-                               'http://loinc.org|3141-9',
-                               'http://loinc.org|29463-7']
-                      }
-                    }
-                  });
+        var pt = patient.read().then(patient =>console.log (patient));
+
+        const query = new URLSearchParams();
+        query.set("patient", smart.patient.id);
+        query.set("_count", 100); // fetch fewer pages if the server supports it
+        query.set("code", ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
+        'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
+        'http://loinc.org|2089-1', 'http://loinc.org|55284-4',
+         'http://loinc.org|3141-9',
+         'http://loinc.org|29463-7'].join(","));
+
+
+        // var obv = smart.patient.api.request({
+        //             type: 'Observation',
+        //             query: {
+        //               code: {
+        //                 $or: ['http://loinc.org|8302-2', 'http://loinc.org|8462-4',
+        //                       'http://loinc.org|8480-6', 'http://loinc.org|2085-9',
+        //                       'http://loinc.org|2089-1', 'http://loinc.org|55284-4',
+        //                        'http://loinc.org|3141-9',
+        //                        'http://loinc.org|29463-7']
+        //               }
+        //             }
+        //           });
+
+         smart.request("Observation?" + query, {
+          pageLimit: 0,   // get all pages
+          flat     : true // return flat array of Observation resources
+      }).then(observations => {
+          const getObservations = client.byCodes(observations, "code");
+          console.log("height", getObservations("8302-2", "8306-3"));
+          console.log("weight", getObservations("29463-7", "3141-9"));
+          // ...
+      });
 
         $.when(pt, obv).catch(onError);
 
