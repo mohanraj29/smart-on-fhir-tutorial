@@ -13,7 +13,7 @@ var weightInkg = null;
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        var obv = smart.patient.api.fetchAll({
+        var obv = smart.patient.api.request({
                     type: 'Observation',
                     query: {
                       code: {
@@ -26,9 +26,9 @@ var weightInkg = null;
                     }
                   });
 
-        $.when(pt, obv).fail(onError);
+        $.when(pt, obv).catch(onError);
 
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv).then(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
