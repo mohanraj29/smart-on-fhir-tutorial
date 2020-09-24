@@ -13,7 +13,7 @@ var weightInkg = null;
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        var obv = smart.patient.api.request({
+        var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
                       code: {
@@ -81,7 +81,7 @@ var weightInkg = null;
       }
     }
 
-    FHIR.oauth2.ready(onReady, onError);
+    FHIR.oauth2.ready().then(onReady).catch(onError);
     return ret.promise();
 
   };
