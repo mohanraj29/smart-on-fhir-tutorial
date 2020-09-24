@@ -13,7 +13,7 @@ var weightInkg = null;
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        var obv = smart.patient.api.fetchAll({
+        var obv = smart.patient.api.request({
                     type: 'Observation',
                     query: {
                       code: {
