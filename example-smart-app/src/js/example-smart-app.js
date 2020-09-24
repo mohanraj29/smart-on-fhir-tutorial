@@ -24,7 +24,7 @@ var weightInkg = null;
                                'http://loinc.org|29463-7']
                       }
                     }
-                  },{pageLimit : 0});
+                  });
 
         $.when(pt, obv).catch(onError);
 
