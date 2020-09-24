@@ -12,7 +12,7 @@ var weightInkg = null;
     function onReady(smart)  {
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
-        var pt = patient.read().then(patient =>console.log (patient));
+        var pt = patient.read();
 
         const query = new URLSearchParams();
         query.set("patient", smart.patient.id);
@@ -37,15 +37,10 @@ var weightInkg = null;
         //             }
         //           });
 
-         smart.request("Observation?" + query, {
+        var obv = smart.request("Observation?" + query, {
           pageLimit: 0,   // get all pages
           flat     : true // return flat array of Observation resources
-      }).then(observations => {
-          const getObservations = client.byCodes(observations, "code");
-          console.log("height", getObservations("8302-2", "8306-3"));
-          console.log("weight", getObservations("29463-7", "3141-9"));
-          // ...
-      });
+      })
 
         $.when(pt, obv).catch(onError);
 
