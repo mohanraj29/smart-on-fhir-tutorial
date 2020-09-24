@@ -37,7 +37,7 @@ var weightInkg = null;
         //             }
         //           });
 
-        var obv = smart.request("Observation?" + query, {
+        var obv = smart.patient.request("Observation?" + query, {
           pageLimit: 0,   // get all pages
           flat     : true // return flat array of Observation resources
       })
