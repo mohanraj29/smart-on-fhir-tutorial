@@ -188,21 +188,21 @@ var weightInkg = null;
     $('#diastolicbp').html(p.diastolicbp);   
   };
 
+  $("#button").click(function(){
+    var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
+    if (bmi > 25) {
+      $('#bmi').html(bmi + " (Overweight)");
+      $("#bmi").css("color", "red");
+    } else if (bmi > 18) {
+      $('#bmi').html(bmi + " (Normal)");
+      $("#bmi").css("color", "green");
+  
+    } else  {
+      $('#bmi').html(bmi + " (Underweight)");
+      $("#bmi").css("color", "yellow");
+  
+    }
+   
+    $("#myDiv").css("display", "block");
+  });
 })(window);
-$("#button").click(function(){
-  var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
-  if (bmi > 25) {
-    $('#bmi').html(bmi + " (Overweight)");
-    $("#bmi").css("color", "red");
-  } else if (bmi > 18) {
-    $('#bmi').html(bmi + " (Normal)");
-    $("#bmi").css("color", "green");
-
-  } else  {
-    $('#bmi').html(bmi + " (Underweight)");
-    $("#bmi").css("color", "yellow");
-
-  }
- 
-  $("#myDiv").css("display", "block");
-});
