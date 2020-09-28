@@ -189,8 +189,7 @@ var weightInkg = null;
   };
 
 })(window);
-
-function getBMI() {
+$("#button").click(function(){
   var bmi = weightInkg/ Math.pow(((heightincm)/100), 2);
   if (bmi > 25) {
     $('#bmi').html(bmi + " (Overweight)");
@@ -206,4 +205,4 @@ function getBMI() {
   }
  
   $("#myDiv").css("display", "block");
-}
+});
