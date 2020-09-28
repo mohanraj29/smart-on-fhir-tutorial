@@ -33,11 +33,7 @@
     <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
     <!-- https://github.com/cerner/fhir-client-cerner-additions -->
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
-    <script>
-      FHIR.oauth2.authorize({
-        'client_id': '8dec8fb2-f2d3-4ebd-ae7c-6ac98e88f7c7',
-        'scope':  'patient/Patient.read patient/Observation.read launch online_access openid profile'
-      });
+    <script src="launch.js">      
     </script>
     <div class="spinner">
       <div class="bounce1"></div>
