@@ -19,7 +19,7 @@
     -->
   </head>
   <body style="background-color: skyblue;">
-    <img src="src/images/experion-logo.png" style="width: 150px;margin-left: 45%;margin-top: 10px;"
+    <img id="img" src="src/images/experion-logo.png"
      alt="experion-logo" title="Experion Technologies">
 
     <div id='errors'>
@@ -30,10 +30,10 @@
       <div class="bounce3"></div>
     </div>
     <div id='holder' >
-      <h2 style="text-align: center;">EXPERION-SMART-App</h2>
+      <h2 >EXPERION-SMART-App</h2>
 
-      <h2 style="text-align: center;">Patient Resource</h2>
-      <table style=" margin-left: 40%;">
+      <h2 >Patient Resource</h2>
+      <table >
         <tr>
           <th>First Name:</th>
           <td id='fname'></td>
@@ -51,8 +51,8 @@
           <td id='birthdate'></td>
         </tr>
       </table>
-      <h2 style="text-align: center;">Observation Resource</h2>
-      <table style="margin-left: 40%;">
+      <h2>Observation Resource</h2>
+      <table >
         
         <tr>
           <th>Systolic Blood Pressure:</th>
@@ -72,8 +72,8 @@
           <td id='weight'></td>
         </tr>
       </table>
-      <button type="button" style="color: black; margin-left: 46%;background-color: orange;font-size: 16px;" id="button" onclick="getBMI()" >Calculate BMI</button>
-     <table style="margin-left: 40%;">
+      <button type="button"id="button" id="button" onclick="getBMI()" >Calculate BMI</button>
+     <table >
       <tr style="display: none;" id='myDiv'>
         <th>BMI:</th>
         <td id='bmi'></td>
@@ -99,19 +99,7 @@
     <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-      extractData().then(
-        //Display Patient Demographics and Observations if extractData was success
-        function(p) {
-          drawVisualization(p);
-        },
-
-        //Display 'Failed to call FHIR Service' if extractData failed
-        function() {
-          $('#loading').hide();
-          $('#errors').html('<p> Failed to call FHIR Service </p>');
-        }
-      );
+    <script src="index.js">     
     </script>
   </body>
 </html>
