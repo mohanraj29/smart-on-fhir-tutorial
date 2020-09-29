@@ -38,7 +38,9 @@
 
 
   <div id='holder'>
-    <img id="img" src="src/images/experion-logo.png" alt="experion-logo" title="Experion Technologies">
+    <div class="img">
+      <img id="img" src="src/images/experion-logo.png" alt="experion-logo" title="Experion Technologies">
+    </div>
     <h2>EXPERION-SMART-App</h2>
 
     <h2>Patient Resource</h2>
@@ -91,24 +93,24 @@
               <td id='systolicbp'></td>
 
             </tr>
-            
+
             <tr>
               <th>Height:</th>
               <td id='height'></td>
             </tr>
-           </table>
+          </table>
 
         </div>
         <div class="col-md-6">
 
           <table>
 
-            
+
             <tr>
               <th>Diastolic Blood Pressure:</th>
               <td id='diastolicbp'></td>
             </tr>
-            
+
             <tr>
               <th>weight:</th>
               <td id='weight'></td>
@@ -157,13 +159,21 @@
         <td id='weight'></td>
       </tr>
     </table> -->
-    <button type="button" id="button">Calculate BMI</button>
-    <table>
-      <tr id='myDiv'>
-        <th>BMI:</th>
-        <td id='bmi'></td>
-      </tr>
-    </table>
+    <div class="button"><button type="button" id="button">Calculate BMI</button></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <table>
+            <tr id='myDiv'>
+              <th>BMI:</th>
+              <td id='bmi'></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    
   </div>
   <!-- Required JS files to enable this page to embed within an MPage -->
   <!--
