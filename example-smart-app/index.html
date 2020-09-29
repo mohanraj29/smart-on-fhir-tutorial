@@ -1,109 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
-    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
-    <!-- <meta http-equiv="X-Content-Type-Options" content="nosniff" /> -->
-    <!-- <meta http-equiv='Content-Security-Policy' content="default-src 'self' ; style-src 'none' ; img-src 'none'; connect-src 'none'"/> -->
-    <meta http-equiv='Content-Security-Policy' content="default-src 'self' data: gap: https: ;
+
+<head>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+  <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+  <!-- <meta http-equiv="X-Content-Type-Options" content="nosniff" /> -->
+  <!-- <meta http-equiv='Content-Security-Policy' content="default-src 'self' ; style-src 'none' ; img-src 'none'; connect-src 'none'"/> -->
+  <meta http-equiv='Content-Security-Policy' content="default-src 'self' data: gap: https: ;
     style-src https:  'self';
     script-src https 'self' https: ;
     img-src 'self'; 
-    connect-src https:"/>
-    <title>Example-SMART-App-Mohanraj20</title>
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
-    <link rel='stylesheet' type='text/css' href='index.css'>
+    connect-src https:" />
+  <title>Example-SMART-App-Mohanraj20</title>
 
-    <!--
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
+  <link rel='stylesheet' type='text/css' href='index.css'>
+
+  <!--
       Temporarily disable cerner-smart-embeddable-lib
       <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
     -->
-  </head>
-  <body>
-    <img id="img" src="src/images/experion-logo.png"
-     alt="experion-logo" title="Experion Technologies">
+</head>
 
-    <div id='errors'>
+<body>
+
+
+
+  <div id='errors'>
+  </div>
+  <div id="loading" class="spinner">
+    <div class="bounce1"></div>
+    <div class="bounce2"></div>
+    <div class="bounce3"></div>
+  </div>
+
+
+
+  <div id='holder'>
+    <img id="img" src="src/images/experion-logo.png" alt="experion-logo" title="Experion Technologies">
+    <h2>EXPERION-SMART-App</h2>
+
+    <h2>Patient Resource</h2>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <table>
+            <tr>
+              <th>First Name:</th>
+              <td id='fname'></td>
+            </tr>
+
+            <tr>
+              <th>Gender:</th>
+              <td id='gender'></td>
+            </tr>
+
+          </table>
+
+        </div>
+        <div class="col-sm-6">
+          <table>
+
+            <tr>
+              <th>Last Name:</th>
+              <td id='lname'></td>
+            </tr>
+
+            <tr>
+              <th>Date of Birth:</th>
+              <td id='birthdate'></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
     </div>
-    <div id="loading" class="spinner">
-      <div class="bounce1"></div>
-      <div class="bounce2"></div>
-      <div class="bounce3"></div>
+
+    <h2>Observation Resource</h2>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+
+          <table>
+
+            <tr>
+              <th>Systolic Blood Pressure:</th>
+              <td id='systolicbp'></td>
+
+            </tr>
+            
+            <tr>
+              <th>Height:</th>
+              <td id='height'></td>
+            </tr>
+           
+
+        </div>
+        <div class="col-sm-6">
+
+          <table>
+
+            
+            <tr>
+              <th>Diastolic Blood Pressure:</th>
+              <td id='diastolicbp'></td>
+            </tr>
+            
+            <tr>
+              <th>weight:</th>
+              <td id='weight'></td>
+            </tr>
+          </table>
+        </div>
+
+      </div>
     </div>
-    <div id='holder' >
-      <h2 >EXPERION-SMART-App</h2>
+    <table>
+      <tr>
+        <th>First Name:</th>
+        <td id='fname'></td>
+      </tr>
+      <tr>
+        <th>Last Name:</th>
+        <td id='lname'></td>
+      </tr>
+      <tr>
+        <th>Gender:</th>
+        <td id='gender'></td>
+      </tr>
+      <tr>
+        <th>Date of Birth:</th>
+        <td id='birthdate'></td>
+      </tr>
+    </table>
+    <h2>Observation Resource</h2>
+    <table>
 
-      <h2 >Patient Resource</h2>
-      <table >
-        <tr>
-          <th>First Name:</th>
-          <td id='fname'></td>
-        </tr>
-        <tr>
-          <th>Last Name:</th>
-          <td id='lname'></td>
-        </tr>
-        <tr>
-          <th>Gender:</th>
-          <td id='gender'></td>
-        </tr>
-        <tr>
-          <th>Date of Birth:</th>
-          <td id='birthdate'></td>
-        </tr>
-      </table>
-      <h2>Observation Resource</h2>
-      <table >
-        
-        <tr>
-          <th>Systolic Blood Pressure:</th>
-          <td id='systolicbp'></td>
+      <tr>
+        <th>Systolic Blood Pressure:</th>
+        <td id='systolicbp'></td>
 
-        </tr>
-        <tr>
-          <th>Diastolic Blood Pressure:</th>
-          <td id='diastolicbp'></td>
-        </tr>
-        <tr>
-          <th>Height:</th>
-          <td id='height'></td>
-        </tr>
-        <tr>
-          <th>weight:</th>
-          <td id='weight'></td>
-        </tr>
-      </table>
-      <button type="button"id="button" >Calculate BMI</button>
-     <table >
+      </tr>
+      <tr>
+        <th>Diastolic Blood Pressure:</th>
+        <td id='diastolicbp'></td>
+      </tr>
+      <tr>
+        <th>Height:</th>
+        <td id='height'></td>
+      </tr>
+      <tr>
+        <th>weight:</th>
+        <td id='weight'></td>
+      </tr>
+    </table>
+    <button type="button" id="button">Calculate BMI</button>
+    <table>
       <tr id='myDiv'>
         <th>BMI:</th>
         <td id='bmi'></td>
       </tr>
-     </table >
-    </div>
-    <!-- Required JS files to enable this page to embed within an MPage -->
-    <!--
+    </table>
+  </div>
+  <!-- Required JS files to enable this page to embed within an MPage -->
+  <!--
       Temporarily disable cerner-smart-embeddable-lib
       <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
       <script src='./lib/js/cerner-smart-embeddable-lib-1.0.0.min.js'></script>
     -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Application-level javascript-->
+  <!-- Application-level javascript-->
 
-    <script src='./src/js/example-smart-app.js'></script>
+  <script src='./src/js/example-smart-app.js'></script>
 
-    <!-- FHIR Client JS Library -->
-    <!-- <script src='./lib/js/fhir-client-v0.1.12.js'></script> -->
-    <script src='https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js'></script>
+  <!-- FHIR Client JS Library -->
+  <!-- <script src='./lib/js/fhir-client-v0.1.12.js'></script> -->
+  <script src='https://cdn.jsdelivr.net/npm/fhirclient/build/fhir-client.js'></script>
 
-    <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
-    <!-- https://github.com/cerner/fhir-client-cerner-additions -->
-    <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
-    <script src="index.js">     
-    </script>
-  </body>
+  <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
+  <!-- https://github.com/cerner/fhir-client-cerner-additions -->
+  <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <script src="index.js">
+  </script>
+</body>
+
 </html>
