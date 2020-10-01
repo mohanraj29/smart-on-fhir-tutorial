@@ -4,12 +4,9 @@ body {
 h2 {
     text-align: center;
 }
-.row {
-    text-align: center;
-}
-/* table {
+table {
     margin-left: 35%;
-} */
+}
 .img {
     text-align: center;
 }
