@@ -25,3 +25,9 @@ text-align: center;
 #myDiv {
     display: none;
 }
+
+@media only screen and (min-width: 990px) {
+    .bmi {
+        margin-left: 40%;
+    }
+  }
